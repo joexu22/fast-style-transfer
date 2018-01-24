@@ -103,3 +103,6 @@ ENV/
 
 # checkpoint
 checkpoint
+
+# Windows10 VS2017CC
+.vs/
