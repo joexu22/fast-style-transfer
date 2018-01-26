@@ -69,6 +69,7 @@ def ffwd_video(path_in, path_out, checkpoint_dir, device_t='/gpu:0', batch_size=
 
 
 # get img_shape
+# I think the magic of ML is in here...
 def ffwd(data_in, paths_out, checkpoint_dir, device_t='/gpu:0', batch_size=4):
     assert len(paths_out) > 0
     is_paths = type(data_in[0]) == str

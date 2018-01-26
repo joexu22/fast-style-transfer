@@ -10,6 +10,7 @@ CONTENT_LAYER = 'relu4_2'
 DEVICES = 'CUDA_VISIBLE_DEVICES'
 
 # np arr, np arr
+# 8/10 sure that content_targets are the test images
 def optimize(content_targets, style_target, content_weight, style_weight,
              tv_weight, vgg_path, epochs=2, print_iterations=1000,
              batch_size=4, save_path='saver/fns.ckpt', slow=False,
@@ -102,6 +103,7 @@ def optimize(content_targets, style_target, content_weight, style_weight,
                 step = curr + batch_size
                 X_batch = np.zeros(batch_shape, dtype=np.float32)
                 for j, img_p in enumerate(content_targets[curr:step]):
+                   # get_image is the function that is acutally manipulating the images
                    X_batch[j] = get_img(img_p, (256,256,3)).astype(np.float32)
 
                 iterations += 1

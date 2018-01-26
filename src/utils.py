@@ -12,6 +12,7 @@ def scale_img(style_path, style_scale):
     style_target = _get_img(style_path, img_size=new_shape)
     return style_target
 
+# 1/10 sure (guessing) that this recursively breaks down an image into shape == 3? and is somehow using that to process the style transfer
 def get_img(src, img_size=False):
    img = scipy.misc.imread(src, mode='RGB') # misc.imresize(, (256, 256, 3))
    if not (len(img.shape) == 3 and img.shape[2] == 3):
@@ -30,4 +31,3 @@ def list_files(in_path):
         break
 
     return files
-

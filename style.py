@@ -115,6 +115,8 @@ def main():
     check_opts(options)
 
     style_target = get_img(options.style)
+    # 8/10 sure that content_tragets are the images
+    # need to actually debug the darn machine to know what's going on
     if not options.slow:
         content_targets = _get_files(options.train_path)
     elif options.test:
